@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
-import { addDoc, getDocs, collection } from 'firebase/firestore'
+import { addDoc, collection } from 'firebase/firestore'
 import { clientSchema } from '../../schemas'
 import { db } from '../../config/firebase'
 import { differenceInYears } from 'date-fns'
-import styles from './FormClient.module.css'
+import useClients from '../../hooks/useClients'
 import Table from '../../components/Table'
 import Stats from '../../components/Stats'
+import styles from './FormClient.module.css'
 
 const Error = ({ children }) => {
   return <p className={styles.error}>{children}</p>
@@ -19,22 +19,11 @@ const getAge = birth => {
 }
 
 const FormClient = () => {
-  const [clients, setClients] = useState([])
   const clientsRef = collection(db, 'clients')
+  const { clients, getClients } = useClients(clientsRef)
 
   const addClient = async values => {
     await addDoc(clientsRef, values)
-  }
-
-  const getClients = async () => {
-    try {
-      const data = await getDocs(clientsRef)
-      const formatData = data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-
-      setClients(formatData)
-    } catch (error) {
-      console.error(error)
-    }
   }
 
   const onSubmit = (values, actions) => {
@@ -44,11 +33,6 @@ const FormClient = () => {
     actions.resetForm()
     getClients()
   }
-
-  useEffect(() => {
-    getClients()
-    // eslint-disable-next-line
-  }, [])
 
   return (
     <main className={styles.main}>

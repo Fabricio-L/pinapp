@@ -11,3 +11,8 @@
 .AppHeader h3 {
   color: white;
 }
+
+.link {
+  display: flex;
+  gap: 5px;
+}
