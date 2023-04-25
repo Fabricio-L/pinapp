@@ -1,0 +1,77 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-500: #272727;
+    --background-400: #323443;
+    --background-300: #3F4152;
+
+    --primary-500: #6b4ede;
+    --primary-400: #8168e5;
+    --primary-300: #9d8be4;
+    --primary-200: #bcafef;
+    --primary-100: #d4cbf8;
+
+    --secondary-500: #c7e800;
+    --secondary-400: #d4f21f;
+    --secondary-300: #e6ff50;
+    --secondary-200: #eaff68;
+    --secondary-100: #f1ff9d;
+
+    --success-500: #4deb66;
+    --success-400: #71ef85;
+    --success-300: #99fea9;
+    --success-200: #baffc5;
+    --success-100: #d8ffde;
+
+    --error-500: #eb4d4d;
+    --error-400: #f36767;
+    --error-300: #fa8787;
+    --error-200: #fda3a3;
+    --error-100: #ffc0c0;
+
+    --neutral-white: 24, 24, 41;
+    --neutral-light-grey: 245, 245, 245;
+    --neutral-medium-grey: 234, 234, 234;
+    --neutral-dark-grey: 190, 190, 190;
+    --neutral-deep-grey: 143, 143, 143;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background-500);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: rgb(var(--neutral-white));
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--neutral-white))
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

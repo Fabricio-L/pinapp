@@ -1,0 +1,13 @@
+.AppHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid #4D4D4D;
+}
+
+.AppHeader h3 {
+  color: white;
+}

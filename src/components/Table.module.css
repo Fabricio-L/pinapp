@@ -1,0 +1,21 @@
+.table {
+  width: 100%;
+  height: fit-content;
+  text-align: left;
+  padding: 2rem;
+  background-color: var(--background-400);
+  border-radius: 12px;
+}
+
+.button {
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .table {
+    font-size: 12px;
+    padding: 1rem;
+  }
+}
